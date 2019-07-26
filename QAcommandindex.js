@@ -1,208 +1,235 @@
+let questionNumber = 0;
+let scoreA = 0;
 
-let myquestNumber = 0;
-var myScore = 0;
 
-function newMakeQuestion () {
-//    console.log("other 00");  
-return newMakeQuestion (otherSTORE)
+//generate question html
+function generateQuestion () {
+    console.log("store 00");
+return generateQuestion(STORE)
 }
-function newMakeQuestion () {
-//    console.log("other 1");
-  if (myquestNumber < otherSTORE.length) {
-//    console.log(myScore);
-    return `<div class="question-${myquestNumber}">
-    <h2>${otherSTORE[myquestNumber].question}</h2>
+function generateQuestion () {
+    console.log("store 1");
+  if (questionNumber < STORE.length) {
+   console.log(questionNumber);
+    console.log(scoreA);
+    console.log(questionNumber);
+    return `<div class="question-${questionNumber}">
+    <h2>${STORE[questionNumber].question}</h2>
     <form>
     <fieldset>
     <label class="answerOption">
-    <input type="radio" value="${otherSTORE[myquestNumber].answers[0]}" name="answer" required>
-    <span>${otherSTORE[myquestNumber].answers[0]}</span>
+    <input type="radio" value="${STORE[questionNumber].answers[0]}" name="answer" required>
+    <span>${STORE[questionNumber].answers[0]}</span>
     </label>
     <label class="answerOption">
-    <input type="radio" value="${otherSTORE[myquestNumber].answers[1]}" name="answer" required>
-    <span>${otherSTORE[myquestNumber].answers[1]}</span>
+    <input type="radio" value="${STORE[questionNumber].answers[1]}" name="answer" required>
+    <span>${STORE[questionNumber].answers[1]}</span>
     </label>
     <label class="answerOption">
-    <input type="radio" value="${otherSTORE[myquestNumber].answers[2]}" name="answer" required>
-    <span>${otherSTORE[myquestNumber].answers[2]}</span>
+    <input type="radio" value="${STORE[questionNumber].answers[2]}" name="answer" required>
+    <span>${STORE[questionNumber].answers[2]}</span>
     </label>
     <label class="answerOption">
-    <input type="radio" value="${otherSTORE[myquestNumber].answers[3]}" name="answer" required>
-    <span>${otherSTORE[myquestNumber].answers[3]}</span>
+    <input type="radio" value="${STORE[questionNumber].answers[3]}" name="answer" required>
+    <span>${STORE[questionNumber].answers[3]}</span>
     </label>
     <button type="submit" class="submitButton">Submit</button>
     </fieldset>
     </form>
     </div>`;
-
 } else {
- //   console.log("other 2");
-//    console.log(myScore);
-    renderOtherResults();
-//    console.log(myScore);
-    myrestartQuz();
-//    console.log(myScore);
-    $('.myquestNumber').text(10)
+   console.log("store 2");
+    renderResults();
+//    console.log(scoreA);
+    restartQuiz();
+//    console.log(scoreA);
+    NextQuizQuest()
+    $('.questionNumber').text(10);
+//    console.log(scoreA);
   }
 }
 
-
 //increment question number
-function changemyquestNumber () {
-//    console.log("other 3");
-  //if (myquestNumber < otherSTORE.length) {
-    myquestNumber ++;
-  //}
-  $('.myquestNumber').text(myquestNumber+1);
+function changeQuestionNumber () {
+   console.log("store 3");
+    questionNumber++;
+    console.log(scoreA);
+    console.log(questionNumber);
+  $('.questionNumber').text(questionNumber+1);
+  console.log(scoreA, "after q");
+  console.log(questionNumber);
 }
 
-//tmk increment myscore issue
-function changemyScore() {
-//    console.log("other 4");
-    myScore++;
-    //tmk added
-//    console.log(myScore);
-    $('.myScore').text(myScore+1);
+//increment score
+function changeScoreA () {
+   console.log("store 4");
+    console.log(scoreA, "before");
+  scoreA++;
+  console.log(scoreA, "after");
+ $('.scoreA').text(scoreA+1);
 }
-
-//start quiz
-//on startQuizButton click hide start div
-//unhide quiz form div
-function newstartQuiz () {
-//    console.log("other 5");
-    $('.newstartQuiz').on('click', '.otherstartButton', function (event) {
+//starting quiz
+function startQuiz () {
+    console.log("store 5");
+    $('.quizStart').on('click', '.startButton', function (event) {
     $('.newstartQuiz').remove();
     $('.quizStart').remove();
+    $('.myScore').remove();
     $('.questionAnswerForm').css('display', 'block');
-    $('.myquestNumber').text(1);
+    $('.questionNumber').text(1);
+    console.log(scoreA);
 });
 }
 
 // render question in DOM
-function myrenderQuestion () {
-//    console.log("other 6");
-  $('.questionAnswerForm').html(newMakeQuestion());
+function renderQuestion () {
+console.log("store 6");
+  $('.questionAnswerForm').html(generateQuestion());
 }
 
 //user selects answer on submit run user feedback
-function newuserSelectAnswer () {
-//    console.log("other 7");
+function userSelectAnswer () {
+    console.log("store 7");
   $('form').on('submit', function (event) {
     event.preventDefault();
     let selected = $('input:checked');
     let answer = selected.val();
-    let correctAnswer = `${otherSTORE[myquestNumber].correctAnswer}`;
+    let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
     if (answer === correctAnswer) {
-        console.log("other 7A");
+        console.log("store 8");
+        console.log(scoreA);
       selected.parent().addClass('correct');
-      correctAnswerPicked();
+      ifAnswerIsCorrect();
     } else {
-//         console.log("other 7B");
+       console.log("store 9");
       selected.parent().addClass('wrong');
-      WrongAnswer();
+      ifAnswerIsWrong();
     }
   });
 }
 
-function correctAnswerPicked(){
-//     console.log("other 8");
-//     console.log(myScore);
-    userAnswerFeedbackCorrect();
-    updatemyScore();
+function ifAnswerIsCorrect () {
+ console.log("store 10");
+theAnswerFeedbackCorrect();
+console.log($('.scoreA', "hi over here"));
+updateScoreA ()
 }
 
-function WrongAnswer () {
-//     console.log("other 9");
-  userWrongReply();
+function ifAnswerIsWrong () {
+    console.log("store 101");
+    userAnswerFeedbackWrong();
 }
 
 //user feedback for correct answer
-function userAnswerFeedbackCorrect () {
-// console.log("other 10");
-// console.log(myScore);
-let correctAnswer = `${otherSTORE[myquestNumber].correctAnswer}`;
-  $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"><img src="${otherSTORE[myquestNumber].icon}" alt="${otherSTORE[myquestNumber].alt}"/></div><p><b>You got it right! it is</b><span>"${correctAnswer}"</span></p><button type=button class="nextButton">Next</button></div>`);
+function theAnswerFeedbackCorrect () {
+    console.log("store 11");
+  let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
+  $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"><img src="${STORE[questionNumber].icon}" alt="${STORE[questionNumber].alt}"/></div><p><b>You got it right!</b></p><button type=button class="nextButton">Next</button></div>`);
 }
 
 //user feedback for wrong answer
-function userWrongReply () {
-//    console.log("other 11");
-  let correctAnswer = `${otherSTORE[myquestNumber].correctAnswer}`;
-  // let iconImage = `${otherSTORE[myquestNumber].icon}`;
-  $('.questionAnswerForm').html(`<div class="wrongFeedback"><div class="icon"><img src="${otherSTORE[myquestNumber].icon}" alt="${otherSTORE[myquestNumber].alt}"/></div><p><b>You got it wrong</b><br>the correct answer is <span>"${correctAnswer}"</span></p><button type=button class="nextButton">Next</button></div>`);
+function userAnswerFeedbackWrong () {
+    console.log("store 12");
+  let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
+  let icon  = 'https://i.imgur.com/3nWGV9zb.jpg';
+  $('.questionAnswerForm').html(`<div class="wrongFeedback"><div class="icon"><img src="${STORE[questionNumber].icon}" alt="${STORE[questionNumber].alt}"/></div><p><b>You got it wrong</b><br>the correct answer is <span>"${correctAnswer}"</span></p><button type=button class="nextButton">Next</button></div>`);
 }
 
 //update score text
-function updatemyScore() {
-//    console.log("other 12");
-//    console.log(myScore);
-  changemyScore();
-  $('.myScore').text(myScore);
+function updateScoreA () {
+    console.log("store 13");
+  changeScoreA();
+  $('.scoreA').text(scoreA);
 }
 
 //when quiz is over this is the html for the page
-function renderOtherResults () {
-//    console.log(myScore);
-//    console.log("other 13");
-    if (myScore === 10) {
-//        console.log("other 13A");
-        $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>Perfect</h3><img src="https://i.imgur.com/jDYqhnb.gif" alt="big green smile"/><p>You got ${myScore} / 10</p><p>You're ready for something advanced!</p><button class="restartButton">Restart Quiz</button></div>`);
-      } else if (myScore >= 7 && myScore < 10) {
-//        console.log("other 13B");
-        $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>Doing good</h3><img src="https://live.staticflickr.com/8245/8510728959_66154d2f76_n.jpg" alt="happy face"/><p>You got ${myScore} / 10</p><p>your getting there but I would still reseach!</p><button class="restartButton">Restart Quiz</button></div>`);
-      }else if (myScore < 7 && myScore >= 5) {
-//        console.log("other 13C");
-        $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>about half way there lets lets try this again!</h3><img src=" https://live.staticflickr.com/3272/2397892819_186678223c_n.jpg " alt="ant holding a stick "/><p>You got ${myScore} / 10</p><p>getting a low score at first is part of learing just try again!</p><button class="restartButton">Restart Quiz</button></div>`);
+function renderResults() {
+    console.log("store 14");
+    if (scoreA === 10) {
+       console.log("store 15");
+       console.log(scoreA, "score");
+        $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>Perfect! you passed please continue</h3><img src="https://i.imgur.com/jDYqhnb.gif" alt="big green smile"/><p>You got ${scoreA} / 10</p><p>You're ready for something advanced!<button class="restartButton">Restart Quiz</button></p><button class="NextQuizQuest"class="nextotherButton">Next Quiz</button></div>`);
+      } else if (scoreA >= 7 && scoreA < 10) {
+        console.log("store 16");
+        $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>Doing good</h3><img src="https://live.staticflickr.com/8245/8510728959_66154d2f76_n.jpg" alt="happy face"/><p>You got ${scoreA} / 10</p><p>your getting there but I would still reseach!<button class="restartButton">Restart Quiz</button></p><button class="NextQuizQuest"class="nextotherButton">Next Quiz</button></div></div>`);
+      }else if (scoreA < 7 && scoreA >= 4) {
+        console.log("store 17");
+        $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>Almost had it, lets try this again!</h3><img src="  https://i277.photobucket.com/albums/kk66/manbat_bucket/animated183.gif " alt="ant holding a stick "/><p>You got ${scoreA} / 10</p><p>getting a low score at first is part of learing just try again!</p><button class="restartButton">Restart Quiz</button></div>`);
       } else {
-//        console.log("other 13D");
-        $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>You might want to get a school to teach you</h3><img src="https://i.imgur.com/yBdx3hg.jpg" alt="sad face"/><p>You got ${myScore} / 10</p><p>With more more time and effort you will get better keep at it</p><button class="restartButton">Restart Quiz</button></div>`);
+        console.log("store 18");
+        $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>You might want to get a school to teach you</h3><img src="   https://i.imgur.com/yBdx3hg.jpg " alt="sad face"/><p>You got ${scoreA} / 10</p><p>With more more time and effort you will get better keep at it</p><button class="restartButton">Restart Quiz</button></div>`);
       }
     }
 //what happens when the user clicks next
-function newrenderNextQuestion () {
+function renderNextQuestion () {
   $('main').on('click', '.nextButton', function (event) {
-//    console.log("other 14");
-    changemyquestNumber();
-    myrenderQuestion();
-    newuserSelectAnswer();
+    console.log("store 19");
+    changeQuestionNumber();
+    renderQuestion();
+    userSelectAnswer();
   });
 }
 //restart quiz function - reloads page to start quiz over
-function myrestartQuz () {
-//    console.log("other 00");  
-  $('main').on('click', '.restartButton', function (event) {
-//    console.log("other 15");
+function restartQuiz () {
+    console.log("store 20");
+   $('main').on('click', '.restartButton', function (event) {
     location.reload();
   });
 }
-function callingyouNow(){
-//    console.log("other 16");
-    var buttoicked;
-    $(".otherstartButton").click(function(){
-    if( buttoicked != true ) {
-      NextmadeQuiz ()
-//        console.log("other 16A");
-        buttoicked= true;
-        NextmadeQuiz();
-    }else{   
-//        console.log("other 16B");
-//        console.log(" man something else again");
+
+function NextQuizQuest () {
+  console.log("store 20+other");
+  $('main').on('click', '.NextQuizQuest', function (event) {
+    console.log("store 20+other fired");
+    console.log(scoreA, " before");
+    console.log(myScore, " before");
+    NextmadeQuiz();
+    console.log(scoreA, "after");
+    console.log(myScore, " after");
+});
+}
+
+function callingyou () {
+    console.log("store 21");
+    var buttonclicked;    
+    $(".startButton").click(function(){      
+    if( buttonclicked != true ) {
+        buttonclicked= true;
+        createQuiz();
+        questionsRest();
+        console.log('store 22 ');
+    }else{
+        console.log("store 23");
     }
     })
     }
-function showScores(){
-//  console.log("fire");
-      $(".show").show();
-      $(".hide").hide();
-  }      
+    function questionsRest(){
+    let questionNumber = 0;
+    return questionNumber;
+    };
+
+    //only hiding comman file score
+    function showotherScores(){
+     console.log("fire storescore");
+     $(".AllquestionNumber").show();
+     $(".questionNumber").show();
+          $(".totally").hide();
+          $(".show").hide();
+          $(".hide").show();
+      }      
+     function locos(){
+      $('main').on('click', '.logo', function (event) {
+        alert("dont click the logo")
+      })
+    }
 //run quiz functions
-function NextmadeQuiz () {
-//    console.log("other 0");
-  newstartQuiz();
-  myrenderQuestion();
-  newuserSelectAnswer();
-  newrenderNextQuestion();
-  showScores();
+function createQuiz () {      
+    console.log('store 24');
+  startQuiz();
+  renderQuestion();
+  userSelectAnswer();
+  renderNextQuestion();
+  showotherScores();
+  locos()
 }
-$(callingyouNow)
-//$(NextmadeQuiz);
+$(callingyou);
