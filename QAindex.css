@@ -35,8 +35,6 @@ header::after {
 
 img{
 height: 50%;
-opacity: 0.5;
-filter: alpha(opacity=50); 
 }
 
 h1 {
@@ -44,23 +42,8 @@ color: red;
 font-style: bold;
 }
 
-p.a {
-  max-width: 700px;
-  padding: 20px;
-  margin: 0 auto;
-  font-size: 20px;
-  font-family: bold;
-  color: white;
-}
-article{
-  max-width: 700px;
-  padding: 20px;
-  margin: 0 auto;
-  font-size: 20px;
-  font-family: bold;
-  color: white;
-background-position: justify center;
-}
+
+/* tmk noted for removal
 input {
   border: 0;
   padding: 12px;
@@ -70,6 +53,9 @@ input[type="submit"] {
   background: blue;
   color: white;
 }
+
+
+*/
 .navbar {
 overflow: hidden;
 background-color: rgb(0, 0, 0);
@@ -181,6 +167,7 @@ header ul {
     width: 50%;
     margin-top: 150px;
 }
+/*tmk noted ok*/
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -197,7 +184,7 @@ button {
     font-size: 18px;
     text-transform: uppercase;
     border-radius: 0;
-    cursor: pointer;
+    cursor: grab;
     transition: all 0.3s ease;
     margin-top: 40px
 }
@@ -226,7 +213,7 @@ label {
     display: flex;
     color: #ffffff;
     text-transform: uppercase;
-    cursor: pointer;
+    cursor: grab;
     transition: all 0.3s ease-out;
     line-height: 22px
 }
@@ -236,6 +223,7 @@ label:hover, label:focus {
 fieldset {
     border: none;
 }
+/*tmk noted ok*/
 input {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -250,9 +238,11 @@ input {
     position: relative;
     top: 2px;
 }
+/*tmk noted ok*/
 input:checked {
     border: 8px solid #ebca52;
 }
+ /*tmk noted ok*/
 input[type=radio] {
     flex: 0 0 auto;
     margin-right: 10px;
@@ -271,7 +261,7 @@ form button {
     font-size: 18px;
     text-transform: uppercase;
     border-radius: 0;
-    cursor: pointer;
+    cursor: grab;
     transition: all 0.3s ease;
     margin-top: 10px;
     width: 100%;
@@ -321,10 +311,11 @@ form button:hover, form button:focus {
     margin-left: 20px;
     margin-right: 20px
 }
+/*tmk noted ok*/
 .wrongFeedback .correctFeedback span {
     color: rgb(161, 56, 175);
 }
-
+/*tmk noted ok*/
 .wrongFeedback img {
     width: 200px;
     height: 200px;
@@ -332,9 +323,11 @@ form button:hover, form button:focus {
     background-color: black;
     margin: auto;
     padding: 10px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    opacity: 0.5;
+filter: alpha(opacity=50); 
 }
-
+/*tmk noted ok*/
 .correctFeedback img {
     width: 300px;
     height: 300px;
@@ -350,6 +343,7 @@ h3 {
     font-size: 40px;
     margin-bottom: 20px;
 }
+/*tmk noted ok*/
 .results img {
     width: 150px;
     height: auto;
@@ -415,6 +409,7 @@ h3 {
         margin: 10px;
         text-align: center
     }
+    /*tmk noted ok*/
     h1 {
         font-size: 1.5em
     }
@@ -443,6 +438,7 @@ h3 {
         font-size: 16px;
         padding: 15px
     }
+    /*tmk noted ok*/
     .correctFeedback img {
         width: 100px;
         height: auto
