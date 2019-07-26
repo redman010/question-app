@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>contact page for viewer's feed back </title>
+        <meta name="description" content="feed back from viewer is submited on this page">
+        <script src="Feed_back.js"></script>
+        <link href="Feed_back.css" rel="stylesheet" type="text/css" />
+      </head>
+
+
+
+<body>
+<header>
+
+    <nav>
+        <div class="navbar">
+              <a href="#home">Home</a>
+        
+        <div class="dropdown">
+                <button class="dropbtn">resume 
+
+                </button>
+                <div id= 'myDropdown' class="dropdown-content">
+                  <a href="#">profolio</a>
+                  <a href="#">Coding Video</a>
+                  <a href="#">practice code</a>
+                </div>
+        </div>
+        <div class="dropdown">
+                  <button class="dropbtn">contacts 
+
+                  </button>
+                  <div id= 'myDropdown' class="dropdown-content">
+                    <a href="#">Feed back</a>
+                    <a href="#">Direct contact</a>
+                    <a href="#">Company Contacts</a>
+                  </div>
+          </div>
+    
+          <div class="dropdown">
+                  <button class="dropbtn">Games 
+
+                  </button>
+                  <div id= 'myDropdown' class="dropdown-content">
+                    <a href="QAindex.html">Question game</a>
+                    <a href="#">card matching game</a>
+                    <a href="#">art gallery</a>
+                  </div>
+          </div> 
+    </div>
+        </div>
+    </nav>
+  </header>
+
+  <h1 id="title"> Survey Form </h1>  
+<div id="form-outer">
+  <p id="description">
+   How is your experince today are dracos coding
+  </p>
+  <form id="survey-form" method="GET" action="#">
+    <!-- name -->
+        <div class="rowTab">
+            <div class="labels">
+              <label id="first-name-label" for="name">* first name: </label>
+            </div>
+                <div class="rightTab">
+                  <input autofocus type="text" name="name" id="first-name" class="input-field" placeholder="Enter your name" required>
+                </div>
+                
+
+        <div class="labels">
+          <label id="last-name-label" for="name">* last Name: </label>
+        </div>
+
+      <div class="rightTab">
+        <input autofocus type="text" name="name" id="name" class="input-field" placeholder="Enter your name" required>
+      </div>
+
+</div>
+
+<!--email-->
+    <div class="rowTab">
+      <div class="labels">
+        <label id="email-label" for="email">* Email address: </label>
+      </div>
+      <div class="rightTab">
+        <input type="email" name="emailaddress" id="email" class="input-field" required placeholder="Enter your Email">
+      </div>
+    </div>
+
+<!-- account number -->
+    <div class="rowTab">
+      <div class="labels">
+        <label id="number-label" for="age">* account number: </label>
+      </div>
+      <div class="rightTab">
+        <input type="number" name="account number" id="number" min="10000" max="99999" class="input-field" placeholder="account number" required>
+      </div>
+    </div>
+<!-- expirene rating -->
+    <div class="rowTab">
+      <div class="labels">
+        <label for="currentPos">how was you expirence today?</label>
+      </div>
+      <div class="rightTab">
+        <select id="dropdown" name="currentPos" class="dropdown" required>
+      <option disabled value>Select an option</option>
+      <option  value="student">10 -perfect day, best ever- </option>
+      <option value="job">9 -one step short of greatest -</option>
+      <option value="learner">8 - still good-</option>
+      <option value="preferNo">7 -got the job done-</option>
+      <option value="other">6 -ok, but can be better-</option>
+      <option value="other">5 - it was ok nothing bad or good-</option>
+      <option value="other">4 - not what i expected -</option>
+      <option value="other">3 -needs improvement-</option> 
+      <option value="other">2 -this was just not for me-</option>
+      <option value="other">1 - not happy at all, omg- </option>
+    </select>
+      </div>
+    </div>
+
+<!-- department question-->
+
+    <div class="rowTab">
+      <div class="labels">
+        <label for="userRating">* what department was helping you today</label>
+      </div>
+      <div class="rightTab">
+        <ul style="list-style: none;" required>
+          <li class="radio"><label>web develoment<input name="radio-buttons" value="1"  type="radio" class="userRatings" required></label></li>
+          <li class="radio"><label>software devlopment<input name="radio-buttons" value="2"  type="radio" class="userRatings" required></label></li>
+          <li class="radio"><label>Coding Classes<input name="radio-buttons" value="3"  type="radio" class="userRatings" required></label></li>
+          <li class="radio"><label>management and consultant<input name="radio-buttons" value="3"  type="radio" class="userRatings" required></label></li>
+        </ul>
+      </div>
+    </div>
+
+<!-- name of the rep question-->
+    <div class="rowTab">
+      <div class="labels">
+        <label for="most-like">what was the name of the representive that helped you today</label>
+      </div>
+      <div class="rightTab">
+        <select id="most-like" name="mostLike" class="dropdown" required>
+      <option disabled selected value>Select an option</option>
+      <option value="challenges">not sure of name</option>
+      <option value="challenges">Jim Brown</option>
+      <option value="projects">Tiffany Monroe</option>
+      <option value="community">Kiven Heart</option>
+      <option value="openSource">Ronald Mcdonald</option>
+    </select>
+      </div>
+    </div>
+
+
+     <!--product question -->
+    <div class="rowTab">
+      <div class="labels">
+        <label for="preferences">Did the agent tell you about any of are products<br>(Check all that apply): </label>
+      </div>
+      <div class="rightTab" required>
+        <fieldset class="group" required>
+      <span class="required">(you can select morethan one option)</span>
+        <ul id="preferences" style="list-style: none;" placeholder="Enter your name" required>
+          <li class="checkbox"><label><input name="prefer" value="0" type="checkbox" class="userRatings">
+          Full-stack web development</label></li>
+          <li class="checkbox"><label><input name="prefer" value="1" type="checkbox" class="userRatings">
+          Back-end Projects </label></li>
+          <li class="checkbox"><label><input name="prefer" value="3" type="checkbox" class="userRatings">Data Visualization</label></li>
+          <li class="checkbox"><label><input name="prefer" value="4" type="checkbox" class="userRatings">GPs tracking and global positioning</label></li>
+          <li class="checkbox"><label><input name="prefer" value="5" type="checkbox" class="userRatings">Open Source robotics</label></li>
+          <li class="checkbox"><label><input name="prefer" value="6" type="checkbox" class="userRatings">programing tutorials</label></li>
+          <li class="checkbox"><label><input name="prefer" value="7" type="checkbox" class="userRatings"> VR technology software</label></li>
+          <li class="checkbox"><label><input name="prefer" value="8" type="checkbox" class="userRatings"> Glass technology</label></li>
+          <li class="checkbox"><label><input name="prefer" value="9" type="checkbox" class="userRatings"> managment and consultant</label></li>
+          <li class="checkbox"><label><input name="prefer" value="10" type="checkbox" class="userRatings"> Programing courses</label></li>
+          <li class="checkbox"><label><input name="prefer" value="11" type="checkbox" class="userRatings">did tell me about this products</label></li>
+       
+        </ul>
+      </fieldset> 
+      </div>
+    </div>
+
+
+    <div class="rowTab">
+      <div class="labels">
+        <label for="comments">Any Comments or Suggestions?</label>
+      </div>
+      <div class="rightTab">
+        <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Enter your comment here..."></textarea>
+      </div>
+    </div>
+
+    <button id="submit" type="submit">Submit</button>
+     <button type="reset">Reset</button>
+
+  
+  </form>
+
+</div>
+
+
+<script src="surveycounter.js"></script>
+
+</body>
+</html>

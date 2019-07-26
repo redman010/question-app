@@ -1,0 +1,284 @@
+/*speed of drop down need to be slower */
+body {
+    background-color: #4271f4;
+    text-align: center;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    min-width: 320px;
+  }
+  header {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px;
+    color: rgb(85, 35, 35);
+    border:5px solid #4d0cb4;
+  }
+  h1{
+    background-color: #5d42f4;
+  
+  }
+  
+  p{
+  font-weight: bold; /*bold text*/
+  color: white;
+  }
+
+  /*start of nav bar*/
+
+  .navbar {
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    font-family: Arial;
+    }
+    
+    /* Links inside the navbar */
+    .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+    
+    /* The dropdown container */
+    .dropdown {
+    float: left;
+    overflow: hidden;
+    }
+    
+    /* Dropdown button */
+    .dropdown .dropbtn {
+    font-size: 16px; 
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+    }
+    
+    /* Add a red background color to navbar links on hover */
+    .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: blue;
+    margin: 0%;
+    }
+    
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2752ca;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    transition-duration: 1s;
+    transition-delay: 1s;
+    }
+    
+    /* Links inside the dropdown */
+    .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition-duration: 5s;
+    }
+    
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+    background-color: #ddd;
+    }
+    
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
+    header ul li {
+        padding: 10px 20px;
+        list-style: none;
+        text-align: center;
+        font-size: 25px;
+        text-transform: uppercase;
+        display: inline;
+        
+    }
+    header ul {
+        text-align: right;
+        margin-top: 50px;
+    }
+
+  /* end pf nav bar*/
+
+
+  /* product question */
+  fieldset.group  { 
+    margin: 0; 
+    padding: 0; 
+    margin-bottom: 1.25em; 
+    padding: .125em; 
+    border-color: black;
+    animation-duration: 10s; 
+  } 
+  
+  fieldset.group legend { 
+    margin: 0; 
+    padding: 0; 
+    font-weight: bold; 
+    margin-left: 20px; 
+    font-size: 100%; 
+    color: black; 
+  } 
+  ul.checkbox  { 
+    margin: 0; 
+    padding: 0; 
+    margin-left: 20px; 
+    list-style: none; 
+  } 
+  
+  ul.checkbox li input { 
+    margin-right: .25em; 
+  } 
+  
+  ul.checkbox li { 
+    border: 1px transparent solid; 
+  } 
+  
+  /*tmk not sure about*/
+  ul.checkbox li label { 
+    margin-left: 10px; 
+  } 
+  
+  ul.checkbox li:hover, 
+  ul.checkbox li.focus  { 
+    background-color: lightyellow; 
+    border: 1px gray solid; 
+    width: 12em; 
+  } 
+  
+  /* inside form body, text and so on */
+  label{
+    color: white;
+  }
+
+  #form-outer {
+    background-color: black;
+    margin: 0 auto;
+    border-radius: 5px;
+    border-color: white; 
+    width: 75%;
+    max-width: 900px;
+    padding: 10px;
+    padding-top: 20px;
+  }
+  
+  .rowtab{
+    border-radius: 5px;
+    border-color: black;
+   width: 20px;
+    max-width: 90px;
+    padding: 10px;
+    padding-top: 10px; 
+  }
+  
+  .labels {
+    display: inline-block;
+    text-align: right;
+    width: 40%;
+    padding: 5px;
+    vertical-align: top;
+    margin-top: 10px;
+  }
+  
+  .rightTab {
+    display: inline-block;
+    text-align: left;
+    width: 48%;
+    vertical-align: middle;
+  }
+  
+  .input-field {
+    height: 20px;
+    width: 280px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+  }
+
+  .userRatings,
+input[type="checkbox"] {
+    float: left;
+    margin-right: 5px;
+  }
+  
+  #userAge {
+    width: 40px;
+  }
+  
+  /*submit button*/
+  #submit {
+    background-color: #db2413;
+    border-radius: 4px;
+    color: white;
+    font-size: 1em;
+    height: 40px;
+    width: 96px;
+    margin: 10px;
+    border: 0px solid;
+  
+  }
+  
+  .dropdown {
+    height: 35px;
+    width: 140px;
+    padding: 5px;
+    margin: 5px;  
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+  }
+  
+  .radio, .checkbox {
+    position: relative;
+    left: -43px;
+    margin-left: 10px;
+    display: block;
+    padding-bottom: 10px;
+  }
+  
+  @media screen and (max-width: 833px) {
+    .input-field {
+      width: 80%;
+    }
+    
+    select {
+      width: 90%;
+    }
+  }
+  
+  @media screen and (max-width: 520px) {
+    .labels {
+      width: 100%;
+      text-align: left;
+    }
+
+    .rightTab {
+      width: 80%;
+      float: left;
+    }
+
+    .input-field {
+      width: 100%;
+    }
+
+    select {
+      width: 100%;
+    }
+  
+  .required { 
+    font-size: 75%; 
+    color: blue; 
+  } 
+}
